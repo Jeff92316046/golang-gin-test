@@ -1,22 +1,15 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	//"github.com/gin-gonic/gin"
+	"fmt"
+	"helloworld/routers/api"
 )
 
 func main() {
-
-	app := gin.Default()
-	app.GET("/hello/:name", func(c *gin.Context) {
-		name := c.Param("name")
-		c.JSON(200, gin.H{
-			"message": "hello " + name,
-		})
-	})
-	err := app.Run(":8080")
-	if err != nil {
-		panic(err)
-	}
+	data := []api.Data_structure{}
+	fmt.Print("start")
+	api.GET_testdata(data)
 }
 
 /*
