@@ -1,11 +1,19 @@
 package main
 
 import (
-	"helloworld/routers/api"
+	"helloworld/routers"
+	"net/http"
 )
 
 func main() {
-	api.GET_testdata()
+	router := routers.NewRouter()
+
+	s := &http.Server{
+		Addr:    ":8080",
+		Handler: router,
+	}
+
+	s.ListenAndServe()
 }
 
 /*

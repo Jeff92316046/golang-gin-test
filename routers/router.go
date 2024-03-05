@@ -1,6 +1,6 @@
 package routers
 
-/* import (
+import (
 	"helloworld/routers/api"
 
 	"github.com/gin-gonic/gin"
@@ -9,6 +9,6 @@ package routers
 func NewRouter() *gin.Engine {
 	router := gin.New()
 
-	router.GET("/testdata",)
+	router.GET("/testdata", api.GET_testdata)
+	return router
 }
-*/
